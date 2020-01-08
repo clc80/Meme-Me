@@ -13,14 +13,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var imagePicker: UIBarButtonItem!
     @IBOutlet var imagePickerView: UIImageView!
     @IBOutlet var cameraButton: UIBarButtonItem!
+    @IBOutlet var bottomTextField: UITextField!
+    @IBOutlet var topTextField: UITextField!
+    
+    let memeTextAttributes: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.strokeColor: UIColor.black,
+        NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSAttributedString.Key.strokeWidth:  -3.0
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        topTextField.defaultTextAttributes = memeTextAttributes
+        topTextField.textAlignment = .center
+        topTextField.backgroundColor = UIColor.clear
+        topTextField.borderStyle = .none
+        
+        bottomTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.textAlignment = .center
+        bottomTextField.backgroundColor = UIColor.clear
+        bottomTextField.borderStyle = .none
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        
     }
 
     @IBAction func imagePickerButtonPressed(_ sender: Any) {
@@ -35,6 +56,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
+    }
+    func textFieldDidBeginEditing() {
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
