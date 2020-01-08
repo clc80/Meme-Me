@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
     
     @IBOutlet var imagePicker: UIBarButtonItem!
     @IBOutlet var imagePickerView: UIImageView!
     @IBOutlet var cameraButton: UIBarButtonItem!
     @IBOutlet var bottomTextField: UITextField!
     @IBOutlet var topTextField: UITextField!
+    
+    let textDelegate = TextDelegate()
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -26,6 +28,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.topTextField.delegate = textDelegate
+        self.bottomTextField.delegate = textDelegate
         
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = .center
