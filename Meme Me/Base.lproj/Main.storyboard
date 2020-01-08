@@ -25,11 +25,19 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIp-7Y-hC9">
                                 <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="Pick" id="gZK-Ii-vWG">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Lr5-lJ-q1S"/>
+                                    <barButtonItem title="Album" id="gZK-Ii-vWG">
                                         <connections>
                                             <action selector="imagePickerButtonPressed:" destination="BYZ-38-t0r" id="msV-Hh-SBa"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AWE-pU-DWO"/>
+                                    <barButtonItem title="Camera" image="camera.fill" catalog="system" id="aUK-DP-sup">
+                                        <connections>
+                                            <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" id="ifq-sk-Zar"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="GzO-XX-IJw"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -46,6 +54,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="aUK-DP-sup" id="3uB-db-Wnr"/>
                         <outlet property="imagePicker" destination="gZK-Ii-vWG" id="PRv-PH-ryh"/>
                         <outlet property="imagePickerView" destination="HJb-on-5qt" id="JQr-jH-CHD"/>
                     </connections>
@@ -55,4 +64,7 @@
             <point key="canvasLocation" x="131.8840579710145" y="120.53571428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera.fill" catalog="system" width="64" height="48"/>
+    </resources>
 </document>
