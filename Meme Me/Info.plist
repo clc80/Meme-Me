@@ -64,6 +64,8 @@
 	<string>Allow this app to use the camera</string>
 	<key>Privacy - Photo Library Usage Description”</key>
 	<string>Allow the app to access your library</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need to save the photos to your library</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 </dict>
