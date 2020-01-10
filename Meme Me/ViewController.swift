@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var bottomTextField: UITextField!
     @IBOutlet var topTextField: UITextField!
     
-    let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(save))
+    var shareButton: UIBarButtonItem!
     let textDelegate = TextDelegate()
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
@@ -42,6 +42,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.backgroundColor = UIColor.clear
         bottomTextField.borderStyle = .none
         
+        shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(save))
         self.navigationItem.rightBarButtonItem = shareButton
         shareButton.isEnabled = imagePickerView.image != nil ? true : false
     }
@@ -141,7 +142,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Create the meme
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
         
-        let vc = UIActivityViewController(activityItems: [meme], applicationActivities: nil)
+        let vc = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: nil)
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true, completion: nil)
         
