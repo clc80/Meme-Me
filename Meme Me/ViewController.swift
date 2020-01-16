@@ -142,6 +142,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Create the meme
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
         
+        //Add it to the mems array on the Application Delegate
+        (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
+        
         let vc = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: nil)
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true, completion: nil)
