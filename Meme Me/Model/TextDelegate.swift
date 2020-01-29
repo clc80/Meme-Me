@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+enum TextField: String {
+    case top, bottom
+}
+
 class TextDelegate: NSObject, UITextFieldDelegate {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
