@@ -41,6 +41,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A39B27D23E164DA0011BEA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B65F523C6B969006AE599 /* Meme.swift */,
+				3A9B65F323C6997C006AE599 /* TextDelegate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A39B27E23E164E60011BEA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A39B27823E164290011BEA2 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A39B27F23E164FE0011BEA2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A43AB5723C43435002F8CF1 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A39B28023E165340011BEA2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A43AB5323C43435002F8CF1 /* AppDelegate.swift */,
+				3A43AB5523C43435002F8CF1 /* SceneDelegate.swift */,
+				3A43AB5C23C43437002F8CF1 /* Assets.xcassets */,
+				3A43AB5E23C43437002F8CF1 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3A43AB4723C43435002F8CF1 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +96,11 @@
 		3A43AB5223C43435002F8CF1 /* Meme Me */ = {
 			isa = PBXGroup;
 			children = (
-				3A43AB5323C43435002F8CF1 /* AppDelegate.swift */,
-				3A43AB5523C43435002F8CF1 /* SceneDelegate.swift */,
-				3A43AB5723C43435002F8CF1 /* ViewController.swift */,
-				3A39B27823E164290011BEA2 /* Main.storyboard */,
-				3A43AB5C23C43437002F8CF1 /* Assets.xcassets */,
-				3A43AB5E23C43437002F8CF1 /* LaunchScreen.storyboard */,
+				3A39B27F23E164FE0011BEA2 /* Controller */,
+				3A39B27D23E164DA0011BEA2 /* Model */,
+				3A39B27E23E164E60011BEA2 /* View */,
+				3A39B28023E165340011BEA2 /* Resources */,
 				3A43AB6123C43437002F8CF1 /* Info.plist */,
-				3A9B65F323C6997C006AE599 /* TextDelegate.swift */,
-				3A9B65F523C6B969006AE599 /* Meme.swift */,
 			);
 			path = "Meme Me";
 			sourceTree = "<group>";
